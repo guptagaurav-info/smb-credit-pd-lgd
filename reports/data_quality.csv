@@ -1,0 +1,9 @@
+check_name,n
+rows_total,899164
+status_missing,1997
+approval_date_unparsed,0
+naics_missing,201948
+revolver_code_invalid,277479
+lowdoc_code_invalid,6007
+chgoff_principal_gt_disbursed,1189
+default_without_chgoff_amt,687

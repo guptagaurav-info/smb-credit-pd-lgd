@@ -1,0 +1,293 @@
+{
+  "split": {
+    "train": {
+      "n": 480033,
+      "default_rate": 0.07680096993331709,
+      "fy": [
+        1990,
+        2003
+      ]
+    },
+    "valid": {
+      "n": 145153,
+      "default_rate": 0.2189758392868215,
+      "fy": [
+        2004,
+        2005
+      ]
+    },
+    "test": {
+      "n": 147405,
+      "default_rate": 0.38787693768868087,
+      "fy": [
+        2006,
+        2007
+      ]
+    }
+  },
+  "leakage_diagnostic": {
+    "test_auc_with_term": 0.96362759097736,
+    "default_rate_by_term_type": [
+      {
+        "term_type": "non-standard term",
+        "n": 225377,
+        "default_rate": 0.5140453551160944
+      },
+      {
+        "term_type": "standard term",
+        "n": 547214,
+        "default_rate": 0.018225045411849845
+      }
+    ],
+    "summary": "naive test AUC with term = 0.964"
+  },
+  "pd_scorecard": {
+    "train": {
+      "n": 480033,
+      "default_rate": 0.07680096993331709,
+      "mean_pd": 0.07681386928565757,
+      "auc": 0.7156674956332134,
+      "gini": 0.4313349912664268,
+      "ks": 0.31985451910823304,
+      "brier": 0.06790707531621372,
+      "ece": 0.001702631140538371
+    },
+    "valid": {
+      "n": 145153,
+      "default_rate": 0.2189758392868215,
+      "mean_pd": 0.14378130249687804,
+      "auc": 0.65340368571379,
+      "gini": 0.3068073714275801,
+      "ks": 0.2271857376063755,
+      "brier": 0.16967480171495122,
+      "ece": 0.07519453678994346
+    },
+    "test": {
+      "n": 147405,
+      "default_rate": 0.38787693768868087,
+      "mean_pd": 0.16588574084078464,
+      "auc": 0.616238224222304,
+      "gini": 0.23247644844460802,
+      "ks": 0.19410541713808094,
+      "brier": 0.2778562112735997,
+      "ece": 0.22199119684789617
+    }
+  },
+  "pd_gbm": {
+    "train": {
+      "n": 480033,
+      "default_rate": 0.07680096993331709,
+      "mean_pd": 0.12042730124800867,
+      "auc": 0.7735570854672098,
+      "gini": 0.5471141709344196,
+      "ks": 0.40375700326449937,
+      "brier": 0.06670530431550038,
+      "ece": 0.04362633131469159
+    },
+    "valid": {
+      "n": 145153,
+      "default_rate": 0.2189758392868215,
+      "mean_pd": 0.2189809339111145,
+      "auc": 0.6928980147504391,
+      "gini": 0.3857960295008782,
+      "ks": 0.2729969511477304,
+      "brier": 0.15684304562991216,
+      "ece": 0.002722751812695605
+    },
+    "test": {
+      "n": 147405,
+      "default_rate": 0.38787693768868087,
+      "mean_pd": 0.2608893440559886,
+      "auc": 0.6639860200824779,
+      "gini": 0.32797204016495574,
+      "ks": 0.24353351860214784,
+      "brier": 0.2367772480838713,
+      "ece": 0.1275616209734769
+    }
+  },
+  "gbm_best_iteration": 125,
+  "scorecard_iv": {
+    "sba_guarantee_pct": 0.6579933912205606,
+    "rel_naics_chgoff": 0.2465134703013091,
+    "is_rural": 0.23656479092360358,
+    "is_revolver": 0.21266250270532522,
+    "days_to_disburse": 0.13553888724678628,
+    "is_out_of_state_lender": 0.12553472386076298,
+    "naics2": 0.10847209030646529,
+    "log_bank_prior_loans": 0.09961212949523154,
+    "rel_state_chgoff": 0.06697995199711872,
+    "rel_bank_chgoff": 0.06028728112037876,
+    "log_approved_amt": 0.04662339971157798,
+    "log_employees": 0.046230897687574116,
+    "jobs_created": 0.02523165105141053,
+    "jobs_retained": 0.017749744321638877,
+    "is_new_business": 0.016926871348488567,
+    "is_franchise": 0.007298211558705044,
+    "is_lowdoc": 0.0013681593785956135
+  },
+  "pd_gbm_test_stress_overlay": {
+    "target_mean_pd": 0.3284637589302322,
+    "n": 147405,
+    "default_rate": 0.38787693768868087,
+    "mean_pd": 0.3284637589302322,
+    "auc": 0.6639860200824779,
+    "gini": 0.32797204016495574,
+    "ks": 0.24353351860214784,
+    "brier": 0.22359234935339414,
+    "ece": 0.07689395203960127
+  },
+  "gbm_mean_abs_shap": {
+    "sba_guarantee_pct": 0.6762,
+    "is_rural": 0.2969,
+    "is_out_of_state_lender": 0.2764,
+    "jobs_retained": 0.1665,
+    "days_to_disburse": 0.1659,
+    "naics2": 0.1312,
+    "log_bank_prior_loans": 0.0943,
+    "is_revolver": 0.0918,
+    "rel_state_chgoff": 0.09,
+    "log_approved_amt": 0.0646,
+    "rel_naics_chgoff": 0.0566,
+    "rel_bank_chgoff": 0.0549,
+    "is_new_business": 0.0447,
+    "log_employees": 0.0373,
+    "jobs_created": 0.0297,
+    "is_lowdoc": 0.0114,
+    "is_franchise": 0.0054
+  },
+  "lgd": {
+    "portfolio_mean": {
+      "valid": {
+        "n": 31785,
+        "mean_actual": 0.6195786801489349,
+        "mean_pred": 0.5960731226736032,
+        "mae": 0.2316353415301673,
+        "rmse": 0.2691000373651124,
+        "spearman": NaN
+      },
+      "test": {
+        "n": 57175,
+        "mean_actual": 0.6150400890249645,
+        "mean_pred": 0.5960731226736032,
+        "mae": 0.224892742847363,
+        "rmse": 0.2600239275051644,
+        "spearman": NaN
+      }
+    },
+    "segment_lookup": {
+      "valid": {
+        "n": 31785,
+        "mean_actual": 0.6195786801489349,
+        "mean_pred": 0.6168208569952709,
+        "mae": 0.23565743582910703,
+        "rmse": 0.2736985590744108,
+        "spearman": -0.1005469278341937
+      },
+      "test": {
+        "n": 57175,
+        "mean_actual": 0.6150400890249645,
+        "mean_pred": 0.6182832244605685,
+        "mae": 0.24156695989099944,
+        "rmse": 0.27693154587986835,
+        "spearman": -0.3920470705013245
+      }
+    },
+    "fractional_logit": {
+      "valid": {
+        "n": 31785,
+        "mean_actual": 0.6195786801489349,
+        "mean_pred": 0.6580877438265537,
+        "mae": 0.2328890799003005,
+        "rmse": 0.27476597028150923,
+        "spearman": -0.011063548019258278
+      },
+      "test": {
+        "n": 57175,
+        "mean_actual": 0.6150400890249645,
+        "mean_pred": 0.6544521759900749,
+        "mae": 0.24062425096580572,
+        "rmse": 0.2772178226416099,
+        "spearman": -0.28290022835380135
+      }
+    },
+    "gbm": {
+      "valid": {
+        "n": 31785,
+        "mean_actual": 0.6195786801489349,
+        "mean_pred": 0.6180581591083986,
+        "mae": 0.23014067481716005,
+        "rmse": 0.267614750986114,
+        "spearman": 0.07094256219239382
+      },
+      "test": {
+        "n": 57175,
+        "mean_actual": 0.6150400890249645,
+        "mean_pred": 0.6233496111005911,
+        "mae": 0.23311120271526792,
+        "rmse": 0.26836280691029485,
+        "spearman": -0.25335600676617737
+      }
+    }
+  },
+  "lgd_champion": "portfolio_mean",
+  "policy_best_cutoff_test": {
+    "scorecard": {
+      "approval_rate": 0.27499999999999997,
+      "bad_rate": 0.22286362739293467,
+      "profit_musd": 592.6666242925016
+    },
+    "gbm": {
+      "approval_rate": 0.42499999999999993,
+      "bad_rate": 0.25214295975864764,
+      "profit_musd": 613.2852597978962
+    }
+  },
+  "swap_set_at_gbm_optimal_approval": {
+    "approval_rate": 0.42499999999999993,
+    "table": [
+      {
+        "segment": "approved_by_both",
+        "n": 47960,
+        "bad_rate": 0.23304837364470393
+      },
+      {
+        "segment": "swap_in (new approves)",
+        "n": 14687,
+        "bad_rate": 0.3144958126234085
+      },
+      {
+        "segment": "swap_out (new declines)",
+        "n": 14687,
+        "bad_rate": 0.44971743718935114
+      },
+      {
+        "segment": "declined_by_both",
+        "n": 70071,
+        "bad_rate": 0.49626807095660114
+      }
+    ]
+  },
+  "psi_score": {
+    "valid_vs_train": 1.1551400542660033,
+    "test_vs_train": 1.6404415504478376
+  },
+  "csi_test_vs_train": {
+    "log_approved_amt": 0.5998,
+    "sba_guarantee_pct": 2.1565,
+    "log_employees": 0.3211,
+    "is_new_business": 0.013,
+    "is_franchise": 0.0247,
+    "is_revolver": 0.8813,
+    "is_lowdoc": 2.5955,
+    "is_out_of_state_lender": 0.3971,
+    "jobs_created": 0.3168,
+    "jobs_retained": 0.4765,
+    "days_to_disburse": 0.5983,
+    "is_rural": 0.0048,
+    "rel_bank_chgoff": 0.3228,
+    "log_bank_prior_loans": 0.9323,
+    "rel_naics_chgoff": 4.9463,
+    "rel_state_chgoff": 1.5379
+  },
+  "runtime_sec": 105.5
+}

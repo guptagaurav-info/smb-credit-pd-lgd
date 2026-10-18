@@ -1,0 +1,32 @@
+data:
+  url: https://huggingface.co/datasets/MaddRaf/SBAnational/resolve/main/SBAnational.csv
+  sha256: 0359128a0b7599e83e4c2e4dcdd781d9121a765237f98d9f0ec1ab3e7c522548
+  raw_csv: data/raw/SBAnational.csv
+  raw_parquet: data/processed/sba_raw.parquet
+  warehouse: data/processed/warehouse.duckdb
+
+# Fiscal-year vintages. Pre-1990 vintages are survivor-biased (mostly charge-offs
+# retained); post-2007 vintages are immature as of the 2014 data cut.
+split:
+  train: [1990, 2003]
+  valid: [2004, 2005]
+  test:  [2006, 2007]   # GFC-stressed out-of-time test
+
+pit_shrinkage_k: 50      # Bayesian shrinkage weight for point-in-time network rates
+
+gbm:
+  learning_rate: 0.05
+  num_leaves: 63
+  min_child_samples: 200
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  lambda_l2: 5.0
+  n_estimators: 2000
+  early_stopping_rounds: 100
+
+pricing:               # illustrative unit economics, annualised
+  cost_of_funds: 0.045
+  opex: 0.010
+  capital_charge: 0.012  # (capital % x hurdle ROE)
+  target_margin: 0.020

@@ -1,0 +1,26 @@
+loan_id,approval_fy,naics2,state,bank,pd,reason_1,reason_2,reason_3,is_default
+1738976008,2006,33,TX,WELLS FARGO BANK NATL ASSOC,0.2330508474576271,Low SBA guarantee share,High state historical charge-off rate vs network,Urban location,1
+2345886009,2006,44,IL,JPMORGAN CHASE BANK NATL ASSOC,0.363441372735939,Low SBA guarantee share,Low days from approval to disbursement,Rural location,0
+2328386010,2006,51,IL,BBCN BANK,0.4017501988862371,High SBA guarantee share,Out-of-state lender,High state historical charge-off rate vs network,1
+2666886010,2007,23,GA,PRIVATEBANK & TR CO,0.13024872960684677,Low SBA guarantee share,Urban location,Low days from approval to disbursement,0
+2408355005,2007,56,ID,NUMERICA CU,0.23219658976930793,Low SBA guarantee share,Out-of-state lender,Urban location,0
+2529915003,2007,54,SC,BANK OF AMERICA NATL ASSOC,0.3506619309008719,Low SBA guarantee share,Low days from approval to disbursement,Out-of-state lender,1
+2253106001,2006,72,MD,"PNC BANK, NATIONAL ASSOCIATION",0.12714776632302405,Low SBA guarantee share,Urban location,Industry sector NAICS 72,1
+1909325000,2006,23,NJ,JPMORGAN CHASE BANK NATL ASSOC,0.23219658976930793,Low SBA guarantee share,Urban location,Out-of-state lender,1
+2479356009,2007,45,PA,"SUPERIOR FINANCIAL GROUP, LLC",0.3506619309008719,High SBA guarantee share,Out-of-state lender,Industry sector NAICS 45,0
+2374595008,2007,23,MD,MANUFACTURERS & TRADERS TR CO,0.40198511166253104,Out-of-state lender,Low SBA guarantee share,Urban location,1
+2230815003,2007,56,NY,CITIZENS BANK NATL ASSOC,0.16253968253968254,Low SBA guarantee share,Out-of-state lender,Urban location,1
+2556115005,2007,32,MA,EASTERN BANK,0.1804167055965617,Low SBA guarantee share,Rural location,Industry sector NAICS 32,0
+2740516003,2007,71,TN,"READYCAP LENDING, LLC",0.25816405245564417,Low SBA guarantee share,Out-of-state lender,Industry sector NAICS 71,1
+1561535002,2006,54,CA,CAPITAL ONE NATL ASSOC,0.23219658976930793,Low SBA guarantee share,Urban location,Out-of-state lender,0
+1845175003,2006,48,MD,CAPITAL ONE NATL ASSOC,0.363441372735939,Urban location,Low SBA guarantee share,Out-of-state lender,0
+2498055001,2007,33,FL,"SUPERIOR FINANCIAL GROUP, LLC",0.3363119415109667,High SBA guarantee share,Urban location,Out-of-state lender,1
+1611745005,2006,72,OH,"PNC BANK, NATIONAL ASSOCIATION",0.33271028037383177,Low SBA guarantee share,Urban location,High jobs retained,1
+2251286005,2006,72,TX,WELLS FARGO BANK NATL ASSOC,0.36964980544747084,Low SBA guarantee share,High state historical charge-off rate vs network,Low days from approval to disbursement,0
+2585805010,2007,44,NH,PEOPLE'S UNITED BANK,0.33271028037383177,High SBA guarantee share,Urban location,High jobs retained,0
+2641125002,2007,23,GA,BANK OF AMERICA NATL ASSOC,0.33271028037383177,Low SBA guarantee share,Out-of-state lender,Low days from approval to disbursement,1
+1470496004,2006,45,IL,JPMORGAN CHASE BANK NATL ASSOC,0.25896139705882365,Low SBA guarantee share,Rural location,High state historical charge-off rate vs network,1
+2955386009,2007,11,MI,RIDGESTONE BANK,0.27956556717618664,Low SBA guarantee share,Out-of-state lender,Rural location,1
+2744916002,2007,62,TX,BANCO POPULAR NORTH AMERICA,0.18965517241379312,Low SBA guarantee share,High state historical charge-off rate vs network,High jobs created,0
+1703865003,2006,53,WI,JPMORGAN CHASE BANK NATL ASSOC,0.12714776632302405,Low SBA guarantee share,Out-of-state lender,Urban location,0
+1717525007,2006,72,TX,"BUSINESS LOAN CENTER, LLC",0.31234866828087166,High SBA guarantee share,Urban location,High jobs retained,1

@@ -1,0 +1,5 @@
+segment,n,bad_rate
+approved_by_both,47960,0.23304837364470393
+swap_in (new approves),14687,0.3144958126234085
+swap_out (new declines),14687,0.44971743718935114
+declined_by_both,70071,0.49626807095660114
