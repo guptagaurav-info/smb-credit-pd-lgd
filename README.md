@@ -1,5 +1,7 @@
 # SMB Credit: PD, LGD and Expected-Loss Pricing on 772K Real SBA Loans
 
+> Companion repo: [cashflow-underwriting-fraud](https://github.com/guptagaurav-info/cashflow-underwriting-fraud) (bank-transaction cash-flow underwriting + fraud gate). Author: Gaurav Gupta.
+
 An end-to-end small-business credit model built the way a lender's risk team would build it. It runs as one pipeline:
 
 - raw government data → warehouse SQL → point-in-time network features
@@ -105,7 +107,7 @@ This repo uses **origination-only** fields, which is why the AUC is about 0.66. 
 - MCA / debt-service burden
 - revenue volatility
 
-It would also add **network-level signals**, such as point-in-time lender and industry performance and inquiry or stacking velocity. The validation, calibration, policy and monitoring layers stay the same. See the companion repo, **cashflow-underwriting-fraud**.
+It would also add **network-level signals**, such as point-in-time lender and industry performance and inquiry or stacking velocity. The validation, calibration, policy and monitoring layers stay the same. See the companion repo, **[cashflow-underwriting-fraud](https://github.com/guptagaurav-info/cashflow-underwriting-fraud)**.
 
 ---
 
