@@ -24,6 +24,29 @@ def _save(fig, name):
     fig.tight_layout(); fig.savefig(FIG / name, dpi=130); plt.close(fig)
 
 
+def plot_auc_by_vintage(by_fy: pd.DataFrame, splits: dict, path, dpi: int = 130) -> None:
+    """AUC by approval fiscal year (integer year ticks) with default-rate bars and shaded holdout periods."""
+    from matplotlib.patches import Patch
+    from matplotlib.ticker import MultipleLocator
+    fig, ax = plt.subplots(figsize=(8, 4.4))
+    ax2 = ax.twinx()
+    ax2.bar(by_fy.fy, by_fy.default_rate * 100, width=.7, alpha=.25, color="grey")
+    ax2.set_ylabel("Default rate (%)")
+    ax.set_zorder(ax2.get_zorder() + 1); ax.patch.set_visible(False)
+    shade = [("valid", "orange", "Validation FY{0}–{1}"), ("test", "red", "Test FY{0}–{1} (crisis)")]
+    for k, c, _ in shade:
+        ax.axvspan(splits[k][0] - .5, splits[k][1] + .5, color=c, alpha=.08)
+    l1, = ax.plot(by_fy.fy, by_fy.auc_gbm, "o-", color="tab:orange", label="Monotone GBM (champion)")
+    l2, = ax.plot(by_fy.fy, by_fy.auc_scorecard, "o-", color="tab:blue", label="WoE scorecard")
+    ax.xaxis.set_major_locator(MultipleLocator(2)); ax.xaxis.set_minor_locator(MultipleLocator(1))
+    ax.set_xlim(by_fy.fy.min() - .7, by_fy.fy.max() + .7)
+    ax.set(xlabel="Approval fiscal year", ylabel="AUC", title="Ranking power by approval year")
+    handles = [l1, l2, Patch(color="grey", alpha=.25, label="Default rate (right axis)")]
+    handles += [Patch(color=c, alpha=.15, label=lab.format(*splits[k])) for k, c, lab in shade]
+    ax.legend(handles=handles, loc="upper left", fontsize=8, frameon=True)
+    fig.tight_layout(); fig.savefig(path, dpi=dpi); plt.close(fig)
+
+
 def leakage_check(cfg, tr, va, te) -> dict:
     """Train the same GBM with the leaky `term_months` added, and tabulate default rate by exact term."""
     import lightgbm as lgb
@@ -178,14 +201,7 @@ def main():
     ax.set(xlabel="Predicted PD (decile mean)", ylabel="Observed default rate", title="Calibration — OOT test")
     ax.legend(); _save(fig, "calibration_test.png")
 
-    fig, ax = plt.subplots(figsize=(7, 4))
-    ax.plot(by_fy.fy, by_fy.auc_scorecard, "o-", label="scorecard AUC")
-    ax.plot(by_fy.fy, by_fy.auc_gbm, "o-", label="GBM AUC")
-    ax2 = ax.twinx(); ax2.bar(by_fy.fy, by_fy.default_rate, alpha=.2, color="grey"); ax2.set_ylabel("default rate")
-    for k, c in [("valid", "orange"), ("test", "red")]:
-        ax.axvspan(cfg["split"][k][0] - .5, cfg["split"][k][1] + .5, color=c, alpha=.08)
-    ax.set(xlabel="Approval fiscal year", ylabel="AUC", title="Rank-ordering by vintage (shaded = OOT)")
-    ax.legend(loc="lower left"); _save(fig, "auc_by_vintage.png")
+    plot_auc_by_vintage(by_fy, cfg["split"], FIG / "auc_by_vintage.png")
 
     fig, ax = plt.subplots(figsize=(6, 4))
     imp.head(15)[::-1].plot.barh(ax=ax); ax.set(title="GBM global importance (mean |SHAP|, log-odds)")
