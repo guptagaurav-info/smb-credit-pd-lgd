@@ -14,6 +14,8 @@ make all          # download (~180 MB, sha256-verified) -> transform -> train ->
 make test         # unit tests on the SQL transforms, point-in-time logic, metrics and policy
 ```
 
+**How it works:** flowcharts of the pipeline, the model and decision logic, and a proposed production design are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 ## Why this dataset
 
 It is the **SBA 7(a) / 504 national loan file**: 899K US small-business loans approved from 1962 to 2014, released under FOIA. It has **real outcomes**:
